@@ -26,10 +26,11 @@ to include your name with greetings you post.</p>
 <%
     }
 %>
-<form>
+<form action="/sign" method="post">
 <input type="radio" name="Type" value="Player">Player<br>
 <input type="radio" name="Type" value="Facility">Facility Admin<br>
 <input type="radio" name="Type" value="System">System Admin<br>
+<div><input type="submit" value="Selected" /></div>
 </form>
  
   </body>
