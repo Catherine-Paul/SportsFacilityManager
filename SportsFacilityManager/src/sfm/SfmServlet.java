@@ -21,7 +21,11 @@ public class SfmServlet extends HttpServlet {
             content = "(No selection)";
         }
         if (user != null) {
-            log.info("Type of user " + user.getNickname() + ": " + content);
+            //log.info("Type of user " + user.getNickname() + ": " + content);
+            if(content.equalsIgnoreCase("Player"))
+            	{
+            	resp.sendRedirect("/player.jsp");
+                }
         } else {
             log.info("Type anonymously: " + content);
         }
