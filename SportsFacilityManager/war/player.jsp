@@ -29,7 +29,7 @@ to include your name with greetings you post.</p>
 
 <form action="/plan" method="post">
 <input type="radio" name="Type" value="Plan">Plan Visit<br>
-<input type="radio" name="Type" value="View Current Queue ">Facility Admin<br>
+<input type="radio" name="Type" value="View Current Queue ">View Queue<br>
 <div><input type="submit" value="Go" /></div>
 </form>
   

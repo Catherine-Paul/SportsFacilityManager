@@ -27,7 +27,10 @@ public class SfmServlet extends HttpServlet {
             	resp.sendRedirect("/player.jsp");
                 }
         } else {
-            log.info("Type anonymously: " + content);
+        	 if(content.equalsIgnoreCase("Facility"))
+         	{
+         	resp.sendRedirect("/facility.jsp");
+             }
         }
         resp.sendRedirect("/sfm.jsp");
     }

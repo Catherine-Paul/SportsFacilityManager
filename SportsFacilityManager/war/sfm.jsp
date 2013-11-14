@@ -20,17 +20,21 @@
 <%
     } else {
 %>
-<p>Welcome to Sports Facility Manager System!
+<p>Welcome to Sports Facility Manager!
 <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-to include your name with greetings you post.</p>
+</p>
 <%
     }
 %>
+<p>Please select who you are:
+
+</p>
+
 <form action="/sign" method="post">
 <input type="radio" name="Type" value="Player">Player<br>
 <input type="radio" name="Type" value="Facility">Facility Admin<br>
 <input type="radio" name="Type" value="System">System Admin<br>
-<div><input type="submit" value="Selected" /></div>
+<div><input type="submit" value="Select" /></div>
 </form>
  
   </body>
