@@ -44,13 +44,21 @@ function myFunction2()
 <script>
 function myFunction3()
 {
+	window.location = '/SetOpenTime.jsp';
+}
+</script>
+
+<script>
+function myFunction4()
+{
 	window.location = '/sfm.jsp';
 }
 </script>
 
 <button type="button" onclick="myFunction1()">Register User</button>
-<button type="button" onclick="myFunction2()">Update Courts</button><br> 
-<button type="button" onclick="myFunction3()">Home</button>
+<button type="button" onclick="myFunction2()">Add Courts</button>
+<button type="button" onclick="myFunction3()">Set Open Times</button><br> 
+<button type="button" onclick="myFunction4()">Home</button>
   
   </body>
 </html>

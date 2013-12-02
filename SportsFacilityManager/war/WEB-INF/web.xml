@@ -49,6 +49,24 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>sfm.RegisterCourtServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>sys</servlet-name>
+        <servlet-class>sfm.SetOpenTimeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sys</servlet-name>
+        <url-pattern>/sys</url-pattern>
+    </servlet-mapping>
+    
      <filter>
                 <filter-name>ObjectifyFilter</filter-name>
                 <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
