@@ -1,10 +1,13 @@
 package sfm;
+
+
 import com.googlecode.objectify.ObjectifyService;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.google.appengine.labs.repackaged.com.google.common.base.Joiner;
 import com.googlecode.objectify.ObjectifyFactory;
 
+import java.util.List;
 import java.util.Date;
 @Entity
 public class Court implements Comparable<Court> {
@@ -15,9 +18,10 @@ public class Court implements Comparable<Court> {
         // id is set by the datastore for us
         @Id
         public Long id;
-        public String CourtType;
-        public String CourtNo;
-          
+        public String CourtName;
+        public List<String> opentimes = null;
+        
+       
         // TODO: figure out why this is needed
         @SuppressWarnings("unused")
         private Court() {
@@ -26,20 +30,27 @@ public class Court implements Comparable<Court> {
         @Override
         public String toString() {
                 Joiner joiner = Joiner.on(":");
-                return joiner.join(id.toString(), CourtType, CourtNo );
+                return joiner.join(id.toString(), CourtName );
          }
 
-        public Court(String Ctype,String Cno)
+        public Court(String Name)
          {
                                 
-                this.CourtType = Ctype;
-                this.CourtNo = Cno;
+                this.CourtName=Name;
                 
          }
+        public void addOpentime(String datetime)
+        {
+        	this.opentimes.add(datetime);
+        }
         
+        public List<String> viewOpentimes()
+        {
+        	return this.opentimes;
+        }
         public String getCourt()
         {
-        	return (CourtType.concat(CourtNo));
+        	return this.CourtName;
         }
         
         public Long getId()

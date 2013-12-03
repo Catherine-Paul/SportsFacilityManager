@@ -8,6 +8,18 @@
 <html>
 
 <head>
+<script>
+function validateForm()
+{
+	var a=document.forms["UpdateCourt"]["CourtName"].value;
+	if (a==null || a=="")
+  	{
+  		alert("Please specify a court name");
+  		return false;
+  	}
+
+}
+</script>
 </head>
 
 <head>
@@ -36,19 +48,21 @@ to include your name with greetings you post.</p>
 <%
     }
 %>
-    
+<script>
+function home()
+{
+	window.location = '/sfm.jsp';
+}
+</script> 
         <h1>Update Court</h1>
 
-        <form name="UpdateCourt" action="update" method="get">
+        <form name="UpdateCourt" action="update"  onsubmit="return validateForm()" method="get">
 
-                <input type="text" name="CourtType"><br> 
-                CourtType <p>
+                <input type="text" name="CourtName"><br> 
+                CourtType_CourtNumber <p>
 
-                <input type="text" name="CourtNo"><br> 
-                Court Number<p>          
-                
                 <input type="submit" value="Register Court">
         </form>
-
+<button type="button" onclick="home()">Home</button>
 </body>
 </html>

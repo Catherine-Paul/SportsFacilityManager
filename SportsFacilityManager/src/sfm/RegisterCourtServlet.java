@@ -12,7 +12,7 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
 public class RegisterCourtServlet extends HttpServlet {
         public void doGet(HttpServletRequest req, HttpServletResponse resp)
                         throws IOException {
-                Court c = new Court(req.getParameter("CourtType"), req.getParameter("CourtNo"));
+                Court c = new Court(req.getParameter("CourtName"));
                 		
                 
                 		

@@ -8,6 +8,61 @@
 <html>
 
 <head>
+
+<script>
+function validateForm()
+{
+	var a=document.forms["RegisterUser"]["FirstName"].value;
+	if (a==null || a=="")
+  	{
+  		alert("First Name must be filled out");
+  		return false;
+  	}
+	
+	var b=document.forms["RegisterUser"]["LastName"].value;
+	if (b==null || b=="")
+  	{
+  		alert("Last Name must be filled out");
+  		return false;
+  	}
+	
+	var c=document.forms["RegisterUser"]["UserName"].value;
+	if (c==null || c=="")
+  	{
+  		alert("User Name must be filled out");
+  		return false;
+  	}
+	
+	var d=document.forms["RegisterUser"]["Email"].value;
+	if (d==null || d=="")
+  	{
+  		alert("Email must be filled out");
+  		return false;
+  	}
+	
+	var e=document.forms["RegisterUser"]["Mobile"].value;
+	if (e==null || e=="")
+  	{
+  		alert("Mobile must be filled out");
+  		return false;
+  	}
+	
+	var f=document.forms["RegisterUser"]["UserType"].value;
+	if (f==null || f=="")
+  	{
+  		alert("User Type must be filled out");
+  		return false;
+  	}
+	
+	var g=document.forms["RegisterUser"]["SkillLevel"].value;
+	if (g==null || g=="")
+  	{
+  		alert("Skill Level must be filled out");
+  		return false;
+  	}
+	
+}
+</script>
 </head>
 
 <head>
@@ -39,28 +94,28 @@ to include your name with greetings you post.</p>
     
         <h1>Register User</h1>
 
-        <form name="RegisterUser" action="register" method="get">
+        <form name="RegisterUser" action="register" onsubmit="return validateForm()" method="get">
 
-                <input type="text" name="FirstName"><br> 
-                FirstName <p>
+                FirstName* <input type="text" name="FirstName"><br> 
+                <p>
 
-                <input type="text" name="LastName"><br> 
-                LastName<p>
+                LastName* <input type="text" name="LastName"><br> 
+                <p>
 
-                <input type="text" name="UserName"><br> 
-                UserName<p>
+                UserName* <input type="text" name="UserName"><br> 
+                <p>
 
- 				<input type="text" name="Email"><br> 
-                Email<p>
+ 				Email* <input type="text" name="Email"><br> 
+                <p>
                 
-                <input type="text" name="Mobile"><br> 
-                Mobile<p>
+                Mobile* <input type="text" name="Mobile"><br> 
+                <p>
                 
-                <input type="text" name="UserType"><br> 
-                UserType<p>
+                UserType* <input type="text" name="UserType"><br> 
+                <p>
                 
-                <input type="text" name="SkillLevel"><br> 
-                SkillLevel<p>
+                SkillLevel* <input type="text" name="SkillLevel"><br> 
+                <p>
 
                 <input type="submit" value="Register User">
         </form>
