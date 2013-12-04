@@ -40,12 +40,7 @@
 
   <body bgcolor="#FFFFFF">
 
-<%
-    UserService userService = UserServiceFactory.getUserService();
-    User user = userService.getCurrentUser();
-    if (user != null) {
-      pageContext.setAttribute("user", user);
-%>
+
 <table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
 	<tr>
 		<td align="center" bgcolor="#CCCCCC"><b><font face="Arial" size="5">
@@ -54,8 +49,7 @@
 	<tr>
 		<td align="center" bgcolor="#EAEAEA">
 <p>&nbsp;</p>
-<p><font face="Arial">Hello <b>System Admin</b>! (<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign 
-out</a>)</font></p>
+<p><font face="Arial">Hello <b>System Admin</b>! </font></p>
 
 <button type="button" onclick="myFunction1()"><b><font face="Arial">Register User</font></b></button>
 		</font>
@@ -68,21 +62,6 @@ out</a>)</font></p>
 		</font> 
 <button type="button" onclick="myFunction4()"><font face="Arial"> Home</font></button>
   
-
-
-<%
-    } else {
-%>
-
-<p><font face="Arial">Welcome to <b>Sports Facility Manager</b>!
-Please
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">sign in</a> 
-to continue.</font></p>
-
-<%
-    }
-%>
-
 
 
   		</font>

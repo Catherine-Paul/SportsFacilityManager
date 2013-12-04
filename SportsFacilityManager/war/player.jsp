@@ -6,32 +6,41 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html>
+<head>
+<script>
+function home()
+{
+	window.location = '/sfm.jsp';
+}
+function plan()
+{
+	window.location = '/plan.jsp';
+}
+</script>
+</head>
+<body>
 
-  <body>
+<table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
+	<tr>
+		<td align="center" bgcolor="#CCCCCC"><b><font face="Arial" size="5">
+		SPORTS FACILITY MANAGER</font></b></td>
+	</tr>
+	<tr>
+		<td align="center" bgcolor="#EAEAEA">
+<p><font face="Arial">
 
-<%
-    UserService userService = UserServiceFactory.getUserService();
-    User user = userService.getCurrentUser();
-    if (user != null) {
-      pageContext.setAttribute("user", user);
-%>
-<p>Hello Player! (You can
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
-<%
-    } else {
-%>
-<p>Welcome to Sports Facility Manager System!
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-to include your name with greetings you post.</p>
-<%
-    }
-%>
+<p>Hello Player!</p>
 
-<form action="/plan" method="post">
-<input type="radio" name="Type" value="Plan">Plan Visit<br>
-<input type="radio" name="Type" value="View Current Queue ">View Queue<br>
-<div><input type="submit" value="Go" /></div>
+<form action="/player" method="post">
+
+<button type="button" onclick="plan()" style="width: 85; height: 24"><font face="Arial"> Plan Visit</font></button>
+<button type="button" onclick="myFunction2()" style="width: 85; height: 24"><font face="Arial"> View Queue</font></button><br>
+<button type="button" onclick="home()" style="width: 85; height: 24"><font face="Arial"> Home</font></button>
 </form>
+
+		</td>
+	</tr>
+</table>
   
-  </body>
+</body>
 </html>

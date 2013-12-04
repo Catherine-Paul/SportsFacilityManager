@@ -11,35 +11,45 @@
 <%@ page import="sfm.Person"%>
 
 <html>
+<head>
 
-  <body>
+<script>
 
-<%
-    UserService userService = UserServiceFactory.getUserService();
-    User user = userService.getCurrentUser();
-    if (user != null) {
-      pageContext.setAttribute("user", user);
-%>
-<p>Hello Facility Admin! (You can
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
-<%
-    } else {
-%>
-<p>Welcome to Sports Facility Manager System!
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
+function myFunction4()
+{
+	window.location = '/sfm.jsp';
+}
+</script>
+</head>
+<body>
+
+
+<table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
+	<tr>
+		<td align="center" bgcolor="#CCCCCC"><b><font face="Arial" size="5">
+		SPORTS FACILITY MANAGER</font></b></td>
+	</tr>
+	<tr>
+		<td align="center" bgcolor="#EAEAEA">
+&nbsp;<p>&nbsp;</p>
+<p><font face="Arial">Hello <b>Facility Administrator</b>! 
+
+
+
+</font>
+
 </p>
-<%
-    }
-%>
 
+<font face="Arial">
 
-
+</font>
 
 <form action="/fac" method="post">
-SIGN IN PLAYER<br>
+<font face="Arial"><b>SIGN IN PLAYER</b><br>
 Please choose the user to check in:<br>
+<font size="3">
 <select name="Player">
-
+<font face="Arial">
 <%
 ObjectifyService.register(Person.class);
 List<Person> Persons = ObjectifyService.ofy().load().type(Person.class).list();
@@ -53,21 +63,34 @@ else {
 		{
 		count++;
 		pageContext.setAttribute("person_id",aperson.getId());
-		pageContext.setAttribute("person_fname",aperson.getName());
+		pageContext.setAttribute("person_fname",aperson.Username);
 		%>
+		
 		<option value="${person_fname}">${person_fname}</option>
+		
 		<%
 		}
 	}
 %>
-
-
+</font>
 <br>
 <div><input type="submit" value="Go" /></div>
+</font></font>
 </form>
+ <font face="Arial">
  <%         
         String FName = request.getParameter("fname");
-        out.println("Selected name = " + FName );        
+        if(FName!=null)
+        out.println("Checked in Player " + FName );        
 %> 
-  </body>
+<br>
+</font>
+<button type="button" onclick="myFunction4()"><font size="3" face="Arial">Home</font><font size="3"></button>
+
+<p>&nbsp;</p>
+		</td>
+	</tr>
+</table>
+
+</body>
 </html>

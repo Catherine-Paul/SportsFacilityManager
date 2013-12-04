@@ -10,6 +10,12 @@
 <head>
 
 <script>
+
+function myFunction4()
+{
+	window.location = '/sfm.jsp';
+}
+
 function validateForm()
 {
 	var a=document.forms["RegisterUser"]["FirstName"].value;
@@ -74,23 +80,17 @@ function validateForm()
 so the ViewAllStreams.jsp that createStreamServlet redirects to may not contain the stream that's just been added -->
 <body>
 
-<%
-    UserService userService = UserServiceFactory.getUserService();
-    User user = userService.getCurrentUser();
-    if (user != null) {
-      pageContext.setAttribute("user", user);
-%>
-<p>Hello System Admin! (You can
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
-<%
-    } else {
-%>
-<p>Welcome to Sports Facility Manager System!
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-to include your name with greetings you post.</p>
-<%
-    }
-%>
+<p>&nbsp;</p>
+<table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
+	<tr>
+		<td align="center" bgcolor="#CCCCCC"><b><font face="Arial" size="5">
+		SPORTS FACILITY MANAGER</font></b></td>
+	</tr>
+	<tr>
+		<td align="center" bgcolor="#EAEAEA">
+&nbsp;
+           
+        <p>Hello System Administrator! 
     
         <h1>Register User</h1>
 
@@ -119,6 +119,12 @@ to include your name with greetings you post.</p>
 
                 <input type="submit" value="Register User">
         </form>
-
+		<button type="button" onclick="myFunction4()"><font face="Arial"> Home</font></button>
+		</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+  
+  <p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
 </body>
 </html>

@@ -20,6 +20,16 @@ function validateForm()
 
 }
 </script>
+<script>
+function home()
+{
+	window.location = '/sfm.jsp';
+}
+function home1()
+{
+	window.location = '/remove.jsp';
+}
+</script> 
 </head>
 
 <head>
@@ -31,29 +41,10 @@ function validateForm()
 so the ViewAllStreams.jsp that createStreamServlet redirects to may not contain the stream that's just been added -->
 <body>
 
-<%
-    UserService userService = UserServiceFactory.getUserService();
-    User user = userService.getCurrentUser();
-    if (user != null) {
-      pageContext.setAttribute("user", user);
-%>
-<p>Hello System Admin! (You can
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
-<%
-    } else {
-%>
-<p>Welcome to Sports Facility Manager System!
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-to include your name with greetings you post.</p>
-<%
-    }
-%>
-<script>
-function home()
-{
-	window.location = '/sfm.jsp';
-}
-</script> 
+
+<p>Hello System Admin! 
+
+
         <h1>Update Court</h1>
 
         <form name="UpdateCourt" action="update"  onsubmit="return validateForm()" method="get">
@@ -63,6 +54,8 @@ function home()
 
                 <input type="submit" value="Register Court">
         </form>
+      
 <button type="button" onclick="home()">Home</button>
+<button type="button" onclick="home1()">DeleteCourts</button>
 </body>
 </html>

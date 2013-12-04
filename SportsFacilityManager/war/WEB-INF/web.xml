@@ -23,12 +23,12 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>plan</servlet-name>
+        <servlet-name>player</servlet-name>
         <servlet-class>sfm.PlayerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>plan</servlet-name>
-        <url-pattern>/plan</url-pattern>
+        <servlet-name>player</servlet-name>
+        <url-pattern>/player</url-pattern>
     </servlet-mapping>
     
     <servlet>
