@@ -6,7 +6,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html>
-
+<head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
   <body>
 
 <table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
@@ -30,7 +32,7 @@
 </p>
 
 <form action="/email" method="post">
-<font face="Arial"><font size="3"></font>font>
+<font face="Arial"><font size="3"></font>
 <input type="submit" value="Send Email" style="font-weight: 700" /></font></div>
 &nbsp;
 

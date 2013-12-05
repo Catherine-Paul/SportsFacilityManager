@@ -13,6 +13,9 @@
 <%@ page import="sfm.Person"%>
 <%@ page import="sfm.Table"%>
 <html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
 <body>
 <table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
 	<tr>

@@ -6,7 +6,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html>
-
+<head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
   <body>
 
 <table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">

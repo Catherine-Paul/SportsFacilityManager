@@ -30,6 +30,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<head>
 <script>
 		function home() {
 			window.location = '/sfm.jsp';
