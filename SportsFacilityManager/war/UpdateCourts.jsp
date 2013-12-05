@@ -33,29 +33,44 @@ function home1()
 </head>
 
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Update Court</title>
+
 </head>
 
 <!--  APT: this can be static so we put in html not jsp. Note that the added stream may take a few seconds to show up, 
 so the ViewAllStreams.jsp that createStreamServlet redirects to may not contain the stream that's just been added -->
 <body>
+<table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
+	<tr>
+		<td align="center" bgcolor="#CCCCCC"><b><font face="Arial" size="5">
+		SPORTS FACILITY MANAGER</font></b></td>
+	</tr>
+	<tr>
+		<td align="center" bgcolor="#EAEAEA">
+&nbsp;
+
+<p><font face="Arial">Hello <b>System Administrator!</b> </font>
 
 
-<p>Hello System Admin! 
-
-
-        <h1>Update Court</h1>
+        <h1><font face="Arial" size="5">Update Court</font></h1>
 
         <form name="UpdateCourt" action="update"  onsubmit="return validateForm()" method="get">
+		<select name="CourtAdded">
+		
+		<option value="Badminton">Badminton</option>
+        <option value="Tennis">Tennis</option>
+        <option value="BasketBall">BasketBall</option>
+        </select>    
 
-                <input type="text" name="CourtName"><br> 
-                CourtType_CourtNumber <p>
-
-                <input type="submit" value="Register Court">
+        <input type="submit" value="Add Court">
         </form>
       
 <button type="button" onclick="home()">Home</button>
-<button type="button" onclick="home1()">DeleteCourts</button>
+<button type="button" onclick="home1()">Delete Records</button>
+		</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+  
+  <p>&nbsp;</p>
 </body>
 </html>

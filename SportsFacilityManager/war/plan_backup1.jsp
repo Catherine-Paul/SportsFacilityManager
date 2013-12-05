@@ -11,6 +11,19 @@
 <%@ page import="com.googlecode.objectify.ObjectifyService"%>
 <%@ page import="sfm.Court"%>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page import="java.util.List"%>
+<%@ page import="com.google.appengine.api.users.User"%>
+<%@ page import="com.google.appengine.api.users.UserService"%>
+<%@ page import="com.google.appengine.api.users.UserServiceFactory"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Collections"%>
+<%@ page import="com.googlecode.objectify.Objectify"%>
+<%@ page import="com.googlecode.objectify.ObjectifyService"%>
+<%@ page import="sfm.Court"%>
+
 <html>
 <body>
 <table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
@@ -20,13 +33,11 @@
 	</tr>
 	<tr>
 		<td align="center" bgcolor="#EAEAEA">
-&nbsp;<p><font face="Arial">
-
-</font></p>
-<p>Hello System Administrator<font size="4">!</font></p>
+&nbsp;<p>&nbsp;</p>
+<p>Hello Player<font size="4">!</font></p>
 <p>&nbsp;</p>
-<form action="/sys" method="post">
-<b><font size="5">Set Open Time</font></b><p><b><br> 
+<form action="/player" method="post">
+<font size="5"><b>Plan Visit</b></font><p><b><br> 
 </b>Please choose the court and date and time:<br>
 <select name="CourtSelected">
 
@@ -53,22 +64,15 @@
 					}
 				}
 			%>
-
+</select>
 </p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 
 
-			<br>
-			<b>Please choose date and time:</b> 
-			<input type="datetime-local" name="slot"><br>			
-			<input type="submit" value="Set" />
-			
 
 <p>
-	
-			<%
-				String CName = request.getParameter("courtname");
+<select name="SlotSelected">
+<%
+				String CName = request.getParameter("courtselected");
 				if (CName == null) {
 				} else {
 					out.println("Selected court  = " + CName);
@@ -79,13 +83,18 @@
 				String x;
 				for (Court c : AllCourts) {
 					try {
-						if (c.getCourt().contentEquals(CName)) {
-							//out.println("in if loop");
-							x=c.getCourt();
-							//out.println(x);
+						if (c.getCourt().contentEquals(CName)) 
+						{		
 							OT = c.viewOpentimes();
 							for (String t : OT) {
-								out.println(t.toString());
+								
+								x= t.toString();
+								pageContext.setAttribute("x", x);
+								
+								%>
+								<option value="${x}">${x}<br></option>	
+								<%
+								
 							}
 
 						}
@@ -95,7 +104,13 @@
 					}
 				}
 			%>
-		
+			
+	</select>		
+	<form>
+								
+			<input type="submit" value="View Open Times" /><br>
+					
+			
 	</form>
 	<script>
 		function home() {
@@ -104,6 +119,5 @@
 	</script>
 	<br>
 	<button type="button" onclick="home()">Home</button>
-
 </body>
 </html>

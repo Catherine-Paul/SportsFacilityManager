@@ -80,57 +80,35 @@ function validateForm()
 so the ViewAllStreams.jsp that createStreamServlet redirects to may not contain the stream that's just been added -->
 <body>
 
-<p>&nbsp;</p>
-<table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
-	<tr>
-		<td align="center" bgcolor="#CCCCCC"><b><font face="Arial" size="5">
-		SPORTS FACILITY MANAGER</font></b></td>
-	</tr>
-	<tr>
-		<td align="center" bgcolor="#EAEAEA">
-&nbsp;
-           
-        <p><font face="Arial" size="3">Hello <b>System Administrator! </b></font>
+<p>Hello System Admin! 
     
-        <h1><font face="Arial" size="5"><b>Register User</b></font></h1>
+        <h1>Register User</h1>
 
         <form name="RegisterUser" action="register" onsubmit="return validateForm()" method="get">
 
-                <font face="Arial" size="3">FirstName* <input type="text" name="FirstName"></font><br> 
+                FirstName* <input type="text" name="FirstName"><br> 
                 <p>
 
-                <font face="Arial" size="3">LastName* <input type="text" name="LastName"></font><br> 
+                LastName* <input type="text" name="LastName"><br> 
                 <p>
 
-                <font face="Arial" size="3">UserName* <input type="text" name="UserName"></font><br> 
+                UserName* <input type="text" name="UserName"><br> 
                 <p>
 
- 				<font face="Arial" size="3">Email* <input type="text" name="Email"></font><br> 
+ 				Email* <input type="text" name="Email"><br> 
                 <p>
                 
-                <font face="Arial" size="3">Mobile* <input type="text" name="Mobile"></font><br> 
+                Mobile* <input type="text" name="Mobile"><br> 
                 <p>
                 
-                <font face="Arial" size="3">UserType* <select type="text" name="UserType"></font><br> 
-		
-				<option value="Player"><font face="Arial" size="3">Player<br></font></option>
-        		<option value="Facility Administrator"><font face="Arial" size="3">Facility Administrator<br></font></option>
-        		<option value="System Administrator"><font face="Arial" size="3">System Administrator<br></font></option>
-        		</select> 
-        		<p>
-                                               
-                <font face="Arial" size="3">SkillLevel* <input type="text" name="SkillLevel"></font><br> 
+                UserType* <input type="text" name="UserType"><br> 
+                <p>
+                
+                SkillLevel* <input type="text" name="SkillLevel"><br> 
                 <p>
 
-                <font face="Arial" size="3"><input type="submit" value="Register User"></font>
-       
-				<button type="button" onclick="myFunction4()"><font face="Arial" size="3"> Home</font></button>
-		 </form>
-		</td>
-	</tr>
-</table>
-<p>&nbsp;</p>
-  
-  <p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+                <input type="submit" value="Register User">
+        </form>
+<button type="button" onclick="myFunction4()"><font face="Arial"> Home</font></button>
 </body>
 </html>

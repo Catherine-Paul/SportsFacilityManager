@@ -1,8 +1,12 @@
 package sfm;
 
+import static com.googlecode.objectify.ObjectifyService.ofy;
+
 import java.io.IOException;
 import java.util.logging.Logger;
+
 import javax.servlet.http.*;
+
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
@@ -18,6 +22,14 @@ public class FacilityServlet extends HttpServlet {
 
         // Do the db update here and then redirect to the original page for confirmation
         String player = req.getParameter("Player");
-        resp.sendRedirect("/facility.jsp?fname=" + player);
+        String courtsel = req.getParameter("CourtSelect");
+        String timeslot = req.getParameter("slot");
+        Queue q = new Queue(courtsel,timeslot,player);
+        ofy().save().entity(q).now();
+        
+        
+        resp.sendRedirect("/facility.jsp?uname=" + player + "&" 	+ "cname=" + courtsel + "&" + "tslot=" + timeslot);
+               
+       
     }
 }

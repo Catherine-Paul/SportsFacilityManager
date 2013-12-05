@@ -20,13 +20,14 @@ public class PlayerServlet extends HttpServlet {
     	String slot = req.getParameter("SlotSelected");
     	String user = req.getParameter("Player");      
     	
-    	if(court!=null)
-    		if(slot!=null)
-    			if(user!=null)
-    			{
-    				Table t = new Table(court, slot, user);
-    				ofy().save().entity(t).now();
-    			}
+    	if(court!=null){
+    	if(slot!=null){
+    	if(user!=null)
+    	{
+    		Table t = new Table(court, slot, user);
+    		ofy().save().entity(t).now();
+    			}}}
         resp.sendRedirect("/plan.jsp?courtselected=" + court + "&" 	+ "slotselected=" + slot + "&" + "user=" + user);
+    	//resp.sendRedirect("/plan.jsp?courtselected=" + court );
     }
 }

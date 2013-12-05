@@ -28,13 +28,16 @@ function plan()
 	<tr>
 		<td align="center" bgcolor="#EAEAEA">
 <p><font face="Arial">
-
+&nbsp;
+&nbsp;
+&nbsp;
 <p>Hello Player!</p>
-
+&nbsp;
+&nbsp;
 <form action="/player" method="post">
 
 <button type="button" onclick="plan()" style="width: 85; height: 24"><font face="Arial"> Plan Visit</font></button>
-<button type="button" onclick="myFunction2()" style="width: 85; height: 24"><font face="Arial"> View Queue</font></button><br>
+<button type="button" onclick="myFunction2()" style="width: 85; height: 24"><font face="Arial"> &nbsp; &nbsp;View Queue</font></button><br>
 <button type="button" onclick="home()" style="width: 85; height: 24"><font face="Arial"> Home</font></button>
 </form>
 

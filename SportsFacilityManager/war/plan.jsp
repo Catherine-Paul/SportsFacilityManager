@@ -12,6 +12,14 @@
 <%@ page import="sfm.Court"%>
 
 <html>
+
+<head>
+<script>
+		function show() {
+			window.location = '/show.jsp';
+		}
+</script>
+</head>
 <body>
 <table align="center" border="0" width="600" cellspacing="0" cellpadding="0" bgcolor="#99CCFF">
 	<tr>
@@ -23,11 +31,11 @@
 &nbsp;<p><font face="Arial">
 
 </font></p>
-<p>Hello System Administrator<font size="4">!</font></p>
+<p>Hello Player<font size="4">!</font></p>
 <p>&nbsp;</p>
-<form action="/sys" method="post">
-<b><font size="5">Set Open Time</font></b><p><b><br> 
-</b>Please choose the court and date and time:<br>
+<form action="/player" method="post">
+<b><font size="5">Plan Visit</font></b><p><b><br> 
+</b>Please choose the court:<br>
 <select name="CourtSelected">
 
 <%
@@ -53,26 +61,29 @@
 					}
 				}
 			%>
-
+</select>
 </p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-
-			<br>
-			<b>Please choose date and time:</b> 
-			<input type="datetime-local" name="slot"><br>			
-			<input type="submit" value="Set" />
-			
-
+<input type="submit" value="View Opentimes" />
 <p>
-	
+
+
+<select name="SlotSelected">	
 			<%
-				String CName = request.getParameter("courtname");
+				String CName = request.getParameter("courtselected");
 				if (CName == null) {
 				} else {
 					out.println("Selected court  = " + CName);
+					
+					pageContext.setAttribute("Coursel", CName.toString());
+					
 				}
+				
+				UserService userService = UserServiceFactory.getUserService();
+		    	User user = userService.getCurrentUser();
+		    	if (user != null) {
+		      	pageContext.setAttribute("user", user.getNickname());}
+				
+				
 				ObjectifyService.register(Court.class);
 				List<Court> AllCourts = ObjectifyService.ofy().load().type(Court.class).list();
 				List<String> OT = new ArrayList<String>();
@@ -85,7 +96,16 @@
 							//out.println(x);
 							OT = c.viewOpentimes();
 							for (String t : OT) {
-								out.println(t.toString());
+								//out.println(t.toString());
+								
+								pageContext.setAttribute("OpenSlot", t.toString());
+								
+								%>
+								
+								<option value="${OpenSlot}">${OpenSlot}</option>
+															
+														
+								<%
 							}
 
 						}
@@ -95,8 +115,16 @@
 					}
 				}
 			%>
-		
-	</form>
+</select>
+<input type="hidden" name="CourtSelected"value="${courtsel}" >
+<input type="hidden" name="Player"value="${user}" >
+<input type="submit" value="Select Slot" />	
+</form>
+
+<br>
+<button type="button" onclick="show()">
+<font face="Arial" size="3">View Sign Up Sheet</font>
+</button>
 	<script>
 		function home() {
 			window.location = '/sfm.jsp';
