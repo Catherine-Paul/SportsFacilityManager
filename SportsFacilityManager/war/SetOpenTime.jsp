@@ -26,10 +26,9 @@
 &nbsp;<p><font face="Arial">
 
 </font></p>
-<p>Hello System Administrator<font size="4">!</font></p>
-<p>&nbsp;</p>
+<p>Hello <b>System Administrator</b><font size="4">!</font></p>
 <form action="/sys" method="post">
-<b><font size="5">Set Open Time</font></b><p><b><br> 
+<b><font size="5">Set Open Time</font></b><b><br> 
 </b>Please choose the court and date and time:<br>
 <select name="CourtSelected">
 

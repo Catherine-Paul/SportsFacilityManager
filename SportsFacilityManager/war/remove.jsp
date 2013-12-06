@@ -12,6 +12,8 @@
 <%@ page import="sfm.Court"%>
 <%@ page import="sfm.Person"%>
 <%@ page import="sfm.Table"%>
+<%@ page import="sfm.Queue"%>
+<%@ page import="sfm.Queryq"%>
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
@@ -48,6 +50,20 @@
 								
 				for(Table t: Tables)
 				{ObjectifyService.ofy().delete().entity(t).now();}
+				
+				ObjectifyService.register(Queue.class);
+				List<Queue> Queues = ObjectifyService.ofy().load().type(Queue.class).list();
+								
+				for(Queue q:  Queues)
+				{ObjectifyService.ofy().delete().entity(q).now();}
+				
+				ObjectifyService.register(Queryq.class);
+				List<Queryq> Queryqs = ObjectifyService.ofy().load().type(Queryq.class).list();
+								
+				for(Queryq qs:  Queryqs)
+				{ObjectifyService.ofy().delete().entity(qs).now();}
+				
+				
 				
 %>
 	

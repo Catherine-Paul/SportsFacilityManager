@@ -73,7 +73,7 @@
 		</font> 
 <button type="button" onclick="myFunction4()"><font face="Arial"> <font size="3">Home</font></font></button>
    		</font>
- <button type="button" onclick="myFunction5()"><font face="Arial"> <font size="3">Email</font></font></button>
+ 
    		</font>  		
 		</p>
 		</td>

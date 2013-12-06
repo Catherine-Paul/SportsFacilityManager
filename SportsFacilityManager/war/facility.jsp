@@ -28,6 +28,11 @@ function myFunction4()
 {
 	window.location = '/sfm.jsp';
 }
+function myFunction5()
+{
+	window.location = '/email.jsp';
+}
+
 </script>
 </head>
 <body>
@@ -127,6 +132,8 @@ else {
 <button type="button" onclick="myFunction3()"><font size="3" face="Arial">View Queue</font><font size="3"></button>
 
 <button type="button" onclick="myFunction4()"><font size="3" face="Arial">Home</font><font size="3"></button>
+
+<button type="button" onclick="myFunction5()"><font face="Arial"> <font size="3">Email</font></font></button>
 
 <p>&nbsp;</p>
 		</td>

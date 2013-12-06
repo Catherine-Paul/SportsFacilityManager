@@ -24,7 +24,8 @@ public class FacilityServlet extends HttpServlet {
         String player = req.getParameter("Player");
         String courtsel = req.getParameter("CourtSelect");
         String timeslot = req.getParameter("slot");
-        Queue q = new Queue(courtsel,timeslot,player);
+        //Queue q = new Queue(courtsel,timeslot,player);
+        Queryq q = new Queryq(courtsel,timeslot,player);
         ofy().save().entity(q).now();
         
         
